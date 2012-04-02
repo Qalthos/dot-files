@@ -1,10 +1,10 @@
 
 if [[ $- == *i* ]] ; then
     c_red=`tput setaf 1`
-    c_green=`tput setaf 2`
+    c_green='%{^[[32m%}'
     c_magen=`tput setaf 5`
     c_cyan=`tput setaf 6`
-    c_white=`tput setaf 7`
+    c_white='%{^[[00m%}'
     c_sgr0=`tput sgr0`
 
     parse_git_branch ()
@@ -46,7 +46,7 @@ if [[ $- == *i* ]] ; then
             echo -ne $color
     }
 
-    PS1='${c_cyan}%n${c_sgr0}@%m ${c_white}%~${c_sgr0} ${c_magen}($(branch_color)$(parse_git_branch)${c_magen})${c_sgr0}
+    PS1='$c_cyan%n$c_sgr0@%m $c_white%~$c_sgr0 $c_magen($(branch_color)$(parse_git_branch)$c_magen)$c_sgr0
  %% '
 fi
 
