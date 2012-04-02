@@ -14,8 +14,8 @@ set textwidth=80
 
 set background=dark
 let g:solarized_termcolors=16
-colorscheme solarized
-" colorscheme vividchalk
+" colorscheme solarized
+colorscheme vividchalk
 
 highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.rst match BadWhitespace /*\t\*/
