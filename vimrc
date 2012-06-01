@@ -8,6 +8,7 @@ set expandtab
 :syntax on
 
 :filetype indent on
+set foldmethod=syntax
 
 " set textwidth=80
 
