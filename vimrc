@@ -4,6 +4,10 @@ set autoindent
 set smartindent
 set expandtab
 
+" Unmap <F1>
+:map <F1> <Esc>
+:imap <F1> <Esc>
+
 :filetype on
 :syntax on
 
