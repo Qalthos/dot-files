@@ -6,7 +6,7 @@ c_blue=`tput setaf 4`
 c_magen=`tput setaf 5`
 c_cyan=`tput setaf 6`
 c_white=`tput setaf 7`
-c_sgr0=`tput sgr0`
+clr=`tput sgr0`
 
 parse_git_branch ()
 {
@@ -46,6 +46,6 @@ branch_color ()
         echo -ne $color
 }
 
-export PROMPT='$c_green%n$c_sgr0@$c_cyan%m$c_sgr0:$c_white%~$c_sgr0$(branch_color)$(parse_git_branch)$c_sgr0
+export PROMPT='$c_green%n$clr@$c_cyan%m$clr:$c_white%~$clr$(branch_color)$(parse_git_branch)$clr
 %# '
 export RPROMPT=$(python ~/scripts/power.py)
