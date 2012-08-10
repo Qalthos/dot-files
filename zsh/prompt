@@ -1,12 +1,12 @@
 setopt PROMPT_SUBST
-c_red=`tput setaf 1`
-c_green=`tput setaf 2`
-c_yello=`tput setaf 3`
-c_blue=`tput setaf 4`
-c_magen=`tput setaf 5`
-c_cyan=`tput setaf 6`
-c_white=`tput setaf 7`
-clr=`tput sgr0`
+c_red=%{`tput setaf 1`%}
+c_green=%{`tput setaf 2`%}
+c_yello=%{`tput setaf 3`%}
+c_blue=%{`tput setaf 4`%}
+c_magen=%{`tput setaf 5`%}
+c_cyan=%{`tput setaf 6`%}
+c_white=%{`tput setaf 7`%}
+clr=%{`tput sgr0`%}
 
 parse_git_branch () {
     if git rev-parse --git-dir >/dev/null 2>&1
