@@ -41,17 +41,26 @@ branch_color () {
 battery() {
     total=10; current=0.; max=0.
     for file in /sys/class/power_supply/BAT*; do
+        state=$(cat $file/status)
         ((current += $(cat $file/charge_now)))
         ((max += $(cat $file/charge_full)))
     done
     ((power = current / max))
-    ((filled = power * total))
-    while ((i <= filled)); do
-        triangles+=◀
+    ((empty = (1 - power) * total))
+    while ((i <= empty)); do
+        if [[ $state == 'Charging' ]]; then
+            triangles+=◁
+        else
+            triangles+=▷
+        fi
         ((i++))
     done
     while ((i <= total)); do
-        triangles+=◁
+        if [[ $state == 'Charging' ]]; then
+            triangles+=◀
+        else
+            triangles+=▶
+        fi
         ((i++))
     done
     if ((power > .6)); then
