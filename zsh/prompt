@@ -8,8 +8,7 @@ c_cyan=`tput setaf 6`
 c_white=`tput setaf 7`
 clr=`tput sgr0`
 
-parse_git_branch ()
-{
+parse_git_branch () {
     if git rev-parse --git-dir >/dev/null 2>&1
     then
         gitver=$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')
@@ -25,8 +24,7 @@ parse_git_branch ()
     fi
 }
 
-branch_color ()
-{
+branch_color () {
         color="${c_red}"
         if git rev-parse --git-dir >/dev/null 2>&1
         then
@@ -72,6 +70,5 @@ battery() {
     echo $color$triangles$clr
 }
 
-export PROMPT='$c_green%n$clr@$c_cyan%m$clr:$c_white%~$clr$(branch_color)$(parse_git_branch)$clr
-%# '
+export PROMPT=$'$c_green%n$clr@$c_cyan%m$clr:$c_white%~$clr$(branch_color)$(parse_git_branch)$clr\n%# '
 export RPROMPT=$(battery)
