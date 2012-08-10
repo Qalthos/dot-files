@@ -46,6 +46,32 @@ branch_color ()
         echo -ne $color
 }
 
+battery() {
+    total=10; current=0.; max=0.
+    for file in /sys/class/power_supply/BAT*; do
+        ((current += $(cat $file/charge_now)))
+        ((max += $(cat $file/charge_full)))
+    done
+    ((power = current / max))
+    ((filled = power * total))
+    while ((i <= filled)); do
+        triangles+=◀
+        ((i++))
+    done
+    while ((i <= total)); do
+        triangles+=◁
+        ((i++))
+    done
+    if ((power > .6)); then
+        color=$c_green
+    elif ((power > .25)); then
+        color=$c_yellow
+    else
+        color=$c_red
+    fi
+    echo $color$triangles$clr
+}
+
 export PROMPT='$c_green%n$clr@$c_cyan%m$clr:$c_white%~$clr$(branch_color)$(parse_git_branch)$clr
 %# '
-export RPROMPT=$(python ~/scripts/power.py)
+export RPROMPT=$(battery)
