@@ -39,6 +39,7 @@ branch_color () {
 }
 
 battery() {
+    if [[ ! -e /sys/class/power_supply/BAT* ]]; then return 0; fi
     total=10; current=0.; max=0.
     for file in /sys/class/power_supply/BAT*; do
         state=$(cat $file/status)
