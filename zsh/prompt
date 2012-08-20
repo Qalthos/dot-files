@@ -40,33 +40,47 @@ branch_color () {
 
 battery() {
     if [[ ! -e /sys/class/power_supply/BAT* ]]; then return 0; fi
-    total=10; current=0.; max=0.
+    let total=10 max_all=0 bat_id=0
+    typeset -A pct max state
     for file in /sys/class/power_supply/BAT*; do
-        state=$(cat $file/status)
-        ((current += $(cat $file/charge_now)))
-        ((max += $(cat $file/charge_full)))
+        state[$bat_id]=$(cat $file/status)
+        ((max_$bat_id = $(cat $file/charge_full_design)))
+        ((pct_$bat_id = max_$bat_id / $(cat $file/charge_now)))
+        ((max_all += max_$bat_id))
+        ((bat_id++))
     done
-    ((power = current / max))
-    ((empty = (1 - power) * total))
-    while ((i <= empty)); do
-        if [[ $state == 'Charging' ]]; then
+    ((unit = max_all / total))
+    output=''
+    for x in ${(k)state}; do
+        ((units = max_$x / unit))
+        output+=$(batt_str max_$x pct_$x units)
+    done
+    echo $output
+}
+
+batt_str() {
+    let i=0
+    triangles=''
+    ((empty = (1 - $2) * $3))
+    while ((i < empty)); do
+        if [[ $1 == 'Charging' ]]; then
             triangles+=◁
         else
             triangles+=▷
         fi
         ((i++))
     done
-    while ((i <= total)); do
-        if [[ $state == 'Charging' ]]; then
+    while ((i < $3)); do
+        if [[ $1 == 'Charging' ]]; then
             triangles+=◀
         else
             triangles+=▶
         fi
         ((i++))
     done
-    if ((power > .6)); then
+    if (($2 > .6)); then
         color=$c_green
-    elif ((power > .25)); then
+    elif (($2 > .25)); then
         color=$c_yellow
     else
         color=$c_red
