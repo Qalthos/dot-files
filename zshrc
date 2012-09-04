@@ -53,3 +53,4 @@ case $DISTRO in
 esac
 source $venv
 echo $DISTRO
+fortune -ac
