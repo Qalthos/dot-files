@@ -93,4 +93,4 @@ batt_str() {
 }
 
 export PROMPT='$c_green%n$clr@$c_cyan%m$clr:$c_white%~$clr$(branch_color)$(parse_git_branch)$clr%# '
-export RPROMPT=$(battery)
+export RPROMPT='$(battery)'
