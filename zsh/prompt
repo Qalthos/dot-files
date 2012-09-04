@@ -65,6 +65,8 @@ batt_str() {
     while ((i < empty)); do
         if [[ $1 == 'Charging' ]]; then
             triangles+=◁
+        elif [[ $1 == 'Unknown' ]]; then
+            triangles+=◇
         else
             triangles+=▷
         fi
@@ -73,6 +75,8 @@ batt_str() {
     while ((i < $3)); do
         if [[ $1 == 'Charging' ]]; then
             triangles+=◀
+        elif [[ $1 == 'Unknown' ]]; then
+            triangles+=◆
         else
             triangles+=▶
         fi
