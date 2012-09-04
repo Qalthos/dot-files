@@ -37,9 +37,11 @@ setopt histignorealldups
 # autoload -U colors
 #colors
 
-export PATH=$PATH:~/scripts
+source /etc/profile
 source ~/.zsh/prompt
 source ~/.zsh/aliases
+
+export PATH=$PATH:~/scripts
 source distro_check.sh
 source virtualenvwrapper.sh
 echo $DISTRO
