@@ -44,16 +44,16 @@ battery() {
     typeset -A pct max state
     for file in /sys/class/power_supply/BAT*; do
         state[$bat_id]=$(cat $file/status)
-        ((max_$bat_id = $(cat $file/charge_full_design)))
-        ((pct_$bat_id = max_$bat_id / $(cat $file/charge_now)))
-        ((max_all += max_$bat_id))
+        ((max[$bat_id] = $(cat $file/energy_full_design)))
+        ((pct[$bat_id] = 1.0 * $(cat $file/energy_now) / max[$bat_id]))
+        ((max_all += max[$bat_id]))
         ((bat_id++))
     done
     ((unit = max_all / total))
     output=''
     for x in ${(k)state}; do
-        ((units = max_$x / unit))
-        output+=$(batt_str max_$x pct_$x units)
+        ((units = max[$x] / unit))
+        output+=$(batt_str $state[$x] $pct[$x] $units)
     done
     echo $output
 }
