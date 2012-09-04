@@ -43,5 +43,13 @@ source ~/.zsh/aliases
 
 export PATH=$PATH:~/scripts
 source distro_check.sh
-source virtualenvwrapper.sh
+
+# Set up virtualenv
+venv=virtualenvwrapper.sh
+case $DISTRO in
+    "Arch")
+        export VIRTUALENV_PYTHON=python2
+        ;;
+esac
+source $venv
 echo $DISTRO
