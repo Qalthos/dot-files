@@ -45,11 +45,16 @@ export EDITOR=vim
 export PATH=$PATH:~/bin:~/scripts
 source distro_check.sh
 
-# Set up virtualenv
+# Set up virtualenv & do distro-specific stuff
 venv=virtualenvwrapper.sh
 case $DISTRO in
     "Arch")
+        eval "$(hub alias -s)"
         export VIRTUALENV_PYTHON=python2
+        ;;
+    "Ubuntu")
+        venv=/etc/bash_completion.d/virtualenvwrapper
+        source /usr/share/autojump/autojump.zsh
         ;;
 esac
 source $venv
