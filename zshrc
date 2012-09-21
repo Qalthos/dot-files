@@ -41,6 +41,7 @@ source /etc/profile
 source ~/.zsh/prompt
 source ~/.zsh/aliases
 
+export EDITOR=vim
 export PATH=$PATH:~/bin:~/scripts
 source distro_check.sh
 
