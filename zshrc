@@ -41,7 +41,7 @@ source /etc/profile
 source ~/.zsh/prompt
 source ~/.zsh/aliases
 
-export PATH=$PATH:~/scripts
+export PATH=$PATH:~/bin:~/scripts
 source distro_check.sh
 
 # Set up virtualenv
