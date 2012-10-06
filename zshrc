@@ -37,6 +37,10 @@ setopt histignorealldups
 # autoload -U colors
 #colors
 
+if [[ -e .Xmodmap ]]; then
+    xmodmap ~/.Xmodmap
+fi
+
 source /etc/profile
 source ~/.zsh/prompt
 source ~/.zsh/aliases
