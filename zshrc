@@ -44,6 +44,7 @@ fi
 source /etc/profile
 source ~/.zsh/prompt
 source ~/.zsh/aliases
+source ~/.zsh/keyboard
 
 export EDITOR=vim
 export PATH=$PATH:~/bin:~/scripts
