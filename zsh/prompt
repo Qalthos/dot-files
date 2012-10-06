@@ -39,7 +39,7 @@ branch_color () {
 }
 
 battery() {
-    if [[ ! -e /sys/class/power_supply/BAT* ]]; then return 0; fi
+    if [[ ! -e /sys/class/power_supply/BAT0 ]]; then return 0; fi
     let total=10 max_all=0 bat_id=0
     typeset -A pct max state
     for file in /sys/class/power_supply/BAT*; do
