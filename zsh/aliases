@@ -1,3 +1,8 @@
+#==Common======
+alias cp="cp -v"
+alias umnt="fusermount -uz /mnt"
+alias chx="chmod +x"
+
 #==RIT Boxen===
 alias illinois="ssh -YA ndc8551@illinois.cs.rit.edu"
 alias gibson="ssh -YA ndc8551@gibson.rit.edu"
@@ -15,8 +20,3 @@ alias tower="rdesktop fourecks -f -b -P -x m -z -a 16 -g 100%"
 alias srandom="sshfs locutus:/data /media/random"
 alias usrandom="fusermount -uz /media/random"
 alias music="srandom && quodlibet && usrandom"
-
-#==Common======
-alias cp="cp -v"
-alias umnt="fusermount -uz /mnt"
-alias chx="chmod +x"
