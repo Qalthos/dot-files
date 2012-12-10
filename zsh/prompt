@@ -29,7 +29,7 @@ branch_color () {
             color=$c_green
         fi
     elif hg status -q >/dev/null 2>&1; then
-        if expr $(hg status | wc -l) == 0 2>&1 > /dev/null; then
+        if expr $(hg status | wc -l) = 0 2>&1 > /dev/null; then
             color=$c_green
         fi
     else
