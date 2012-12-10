@@ -61,24 +61,24 @@ battery() {
 batt_str() {
     let i=0
     triangles=''
-    ((empty = (1 - $2) * $3))
-    while ((i < empty)); do
-        if [[ $1 == 'Charging' ]]; then
-            triangles+=◁
-        elif [[ $1 == 'Unknown' ]]; then
-            triangles+=◇
-        else
-            triangles+=▷
-        fi
-        ((i++))
-    done
-    while ((i < $3)); do
+    ((full = $2 * $3))
+    while ((i < full)); do
         if [[ $1 == 'Charging' ]]; then
             triangles+=◀
         elif [[ $1 == 'Unknown' ]]; then
             triangles+=◆
         else
             triangles+=▶
+        fi
+        ((i++))
+    done
+    while ((i < $3)); do
+        if [[ $1 == 'Charging' ]]; then
+            triangles=◁$triangles
+        elif [[ $1 == 'Unknown' ]]; then
+            triangles=◇$triangles
+        else
+            triangles=▷$triangles
         fi
         ((i++))
     done
