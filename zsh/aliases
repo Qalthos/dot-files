@@ -1,4 +1,5 @@
 #==Common======
+alias ls="ls --color"
 alias cp="cp -v"
 alias umnt="fusermount -uz /mnt"
 alias chx="chmod +x"
