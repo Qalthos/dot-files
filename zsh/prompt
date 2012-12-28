@@ -89,8 +89,8 @@ batt_str() {
     else
         color=$c_red
     fi
-    echo $color$triangles$clr
+    echo $color$triangles
 }
 
 export PROMPT='$c_green%n$clr@$c_cyan%m$clr:$c_blue%~$clr$(branch_color)$(parse_git_branch)$clr%# '
-export RPROMPT='$(battery)'
+export RPROMPT='$(battery)$clr'
