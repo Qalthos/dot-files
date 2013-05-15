@@ -57,7 +57,7 @@ case $DISTRO in
         eval "$(hub alias -s)"
         export VIRTUALENV_PYTHON=python2
         ;;
-    "Ubuntu")
+    "Ubuntu" | "Debian")
         venv=/etc/bash_completion.d/virtualenvwrapper
         source /usr/share/autojump/autojump.zsh
         ;;
