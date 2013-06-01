@@ -1,7 +1,6 @@
 #==Common======
 alias ls="ls --color"
 alias cp="cp -v"
-alias umnt="fusermount -uz /mnt"
 alias chx="chmod +x"
 
 #==RIT Boxen===
@@ -13,12 +12,9 @@ alias mntGibson="sshfs ndc8551@gibson.rit.edu:www /mnt"
 alias foss="ssh -YA qalthos@foss.rit.edu"
 alias boat="ssh -YA qalthos@civx-dev1.csh.rit.edu"
 alias yacht="ssh -YA qalthos@yacht.rit.edu"
-alias catamaran="ssh -YA qalthos@aslo3.rit.edu"
+alias catamaran="ssh -YA qalthos@aslo1.rit.edu"
 
 #==My Boxen====
 alias locutus="ssh -YA linkybook.com"
 alias tron="ssh -YA linkybook.com -p 12131"
 alias tower="rdesktop fourecks -f -b -P -x m -z -a 16 -g 100%"
-alias srandom="sshfs linkybook.com:/data /media/random"
-alias usrandom="fusermount -uz /media/random"
-alias music="srandom && quodlibet && usrandom"
