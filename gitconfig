@@ -2,4 +2,9 @@
 	name = Nathaniel Case
 	email = Qalthos@gmail.com
 [color]
-    ui = true
+	ui = true
+[push]
+#	default = simple
+	default = current
+[diff]
+	algorithm = patience
