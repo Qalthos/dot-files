@@ -64,4 +64,8 @@ case $DISTRO in
 esac
 source $venv
 echo $DISTRO
-fortune -ac
+
+if [ $(which fortune) ]
+then
+    fortune -ac
+fi
