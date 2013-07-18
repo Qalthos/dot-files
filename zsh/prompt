@@ -26,7 +26,7 @@ parse_git_branch () {
 branch_color () {
     color=$c_red
     if git rev-parse --git-dir >/dev/null 2>&1; then
-        if git status | grep "nothing to commit" 2>&1 > /dev/null; then
+        if git status -uno | grep "nothing to commit" 2>&1 > /dev/null; then
             color=$c_green
         fi
     elif hg status -q >/dev/null 2>&1; then
