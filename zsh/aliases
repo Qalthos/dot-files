@@ -13,6 +13,7 @@ alias foss="ssh -YA qalthos@foss.rit.edu"
 alias boat="ssh -YA qalthos@civx-dev1.csh.rit.edu"
 alias yacht="ssh -YA qalthos@yacht.rit.edu"
 alias catamaran="ssh -YA qalthos@aslo1.rit.edu"
+alias schoolserver='ssh qalthos@schoolserver.csh.rit.edu'
 
 #==My Boxen====
 alias locutus="ssh -YA linkybook.com"
