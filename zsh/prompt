@@ -11,8 +11,9 @@ clr=%{`tput sgr0`%}
 parse_git_branch () {
     if git rev-parse --git-dir >/dev/null 2>&1; then
         gitver=$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')
-        numfil=$(git status | grep "#	" | wc -l)
-        echo -e "(±:${gitver}:${numfil})"
+        numfil=$(git status -s -uno | wc -l)
+        untracked=$(git status -s | egrep "^\?" | wc -l)
+        echo -e "(±:${gitver}:${numfil}:${untracked})"
     elif hg status -q >/dev/null 2>&1; then
         hgver=$(hg branch 2>/dev/null)
         numfil=$(hg status | wc -l)
