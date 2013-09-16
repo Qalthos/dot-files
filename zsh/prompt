@@ -45,9 +45,16 @@ battery() {
     typeset -A pct max state
     for file in /sys/class/power_supply/BAT*; do
         state[$bat_id]=$(cat $file/status)
-        ((max[$bat_id] = $(cat $file/energy_full_design)))
-        ((pct[$bat_id] = 1.0 * $(cat $file/energy_now) / max[$bat_id]))
-        ((max_all += max[$bat_id]))
+        if [[ -e $file/energy_full_design ]]; then
+            ((max[$bat_id] = $(cat $file/energy_full_design)))
+            ((pct[$bat_id] = 1.0 * $(cat $file/energy_now) / max[$bat_id]))
+            ((max_all += max[$bat_id]))
+        else
+            # Battery is not being detected properly
+            # Set max to 1 to avoid divide by zero
+            ((max[$bat_id] = 1))
+            ((pct[$bat_id] = 0))
+        fi
         ((bat_id++))
     done
     ((unit = max_all / total))
