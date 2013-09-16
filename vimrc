@@ -14,8 +14,6 @@ set expandtab
 :filetype indent on
 set foldmethod=syntax
 
-" set textwidth=80
-
 set background=dark
 colorscheme vividchalk
 
