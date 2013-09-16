@@ -2,6 +2,7 @@
 alias ls="ls --color"
 alias cp="cp -v"
 alias chx="chmod +x"
+alias svim="sudo vim -u ~/.vimrc"
 
 #==RIT Boxen===
 alias illinois="ssh -YA ndc8551@illinois.cs.rit.edu"
