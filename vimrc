@@ -14,8 +14,10 @@ set expandtab
 :filetype indent on
 set foldmethod=syntax
 
+" colorscheme
 set background=dark
-colorscheme vividchalk
+"colorscheme vividchalk
+colorscheme Tomorrow-Night
 
 highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.rst match BadWhitespace /*\t\*/
