@@ -4,11 +4,6 @@ alias cp="cp -v"
 alias chx="chmod +x"
 alias svim="sudo vim -u ~/.vimrc"
 
-#==RIT Boxen===
-alias illinois="ssh -YA ndc8551@illinois.cs.rit.edu"
-alias gibson="ssh -YA ndc8551@gibson.rit.edu"
-alias mntGibson="sshfs ndc8551@gibson.rit.edu:www /mnt"
-
 #==FOSS@RIT====
 alias foss="ssh -YA qalthos@foss.rit.edu"
 alias boat="ssh -YA qalthos@civx-dev1.csh.rit.edu"
