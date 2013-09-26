@@ -63,7 +63,6 @@ esac
 source $venv
 echo $DISTRO
 
-if [ $(which fortune) ]
-then
+if hash fortune 2>/dev/null; then
     fortune -ac
 fi
