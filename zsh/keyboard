@@ -1,3 +1,7 @@
+if [[ -e .Xmodmap ]]; then
+    xmodmap ~/.Xmodmap
+fi
+
 autoload zkbd
 function zkbd_file() {
     [[ -f ~/.zkbd/${TERM}-${VENDOR}-${OSTYPE} ]] && printf '%s' ~/".zkbd/${TERM}-${VENDOR}-${OSTYPE}" && return 0
