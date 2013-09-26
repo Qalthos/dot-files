@@ -38,9 +38,11 @@ setopt histignorealldups
 #colors
 
 source /etc/profile
-source ~/.zsh/prompt
 source ~/.zsh/aliases
-source ~/.zsh/keyboard
+source ~/.zsh/prompt
+if [ $OSTYPE != 'cygwin' ]; then
+    source ~/.zsh/keyboard
+fi
 
 export EDITOR=vim
 export PATH=$PATH:~/bin:~/scripts
