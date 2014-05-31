@@ -8,3 +8,5 @@
 	default = current
 [diff]
 	algorithm = patience
+[core]
+	autocrlf = input
