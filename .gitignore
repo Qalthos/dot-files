@@ -2,3 +2,4 @@
 history
 *.sw?
 *~
+id_rsa*
