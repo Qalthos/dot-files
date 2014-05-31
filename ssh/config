@@ -1,6 +1,27 @@
-Host 192.168.1.* *.131.countess *pi
+Host *
+  ForwardAgent yes
+
+#######################################
+########    Apartment hosts   #########
+#######################################
+
+Host 192.168.1.* *.131.countess
   StrictHostKeyChecking no
   UserKnownHostsFile=/dev/null
 
-Host *
-  ForwardAgent yes
+Host locutus
+  Hostname linkybook.com
+host tron
+  Hostname 131countess.churchofgoard.com
+  Port 12131
+
+#######################################
+#########    FOSS@RIT hosts   #########
+#######################################
+
+Host foss
+  Hostname csi.csh.rit.edu
+  User qalthos
+Host yacht
+  Hostname yacht.rit.edu
+

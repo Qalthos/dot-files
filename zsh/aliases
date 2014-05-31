@@ -4,14 +4,5 @@ alias cp="cp -v"
 alias chx="chmod +x"
 alias svim="sudo vim -u ~/.vimrc"
 
-#==FOSS@RIT====
-alias foss="ssh -YA qalthos@foss.rit.edu"
-alias boat="ssh -YA qalthos@civx-dev1.csh.rit.edu"
-alias yacht="ssh -YA qalthos@yacht.rit.edu"
-alias catamaran="ssh -YA qalthos@aslo1.rit.edu"
-alias schoolserver='ssh qalthos@schoolserver.csh.rit.edu'
-
 #==My Boxen====
-alias locutus="ssh -YA linkybook.com"
-alias tron="ssh -YA linkybook.com -p 12131"
 alias tower="rdesktop fourecks -f -b -P -x m -z -a 16 -g 100%"
