@@ -75,6 +75,8 @@ batt_str() {
             triangles+=◀
         elif [[ $1 == 'Unknown' ]]; then
             triangles+=◆
+        elif [[ $1 == 'Full' ]]; then
+            triangles+=◼
         else
             triangles+=▶
         fi
