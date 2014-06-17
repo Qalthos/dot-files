@@ -54,6 +54,7 @@ case $DISTRO in
     "Arch")
         eval "$(hub alias -s)"
         export VIRTUALENV_PYTHON=python2
+        eval "$(fasd --init auto)"
         ;;
     "Ubuntu" | "Debian")
         venv=/etc/bash_completion.d/virtualenvwrapper
