@@ -2,4 +2,7 @@
 history
 *.sw?
 *~
+
+# SSH keys!
 id_rsa*
+*.pem
