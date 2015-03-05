@@ -37,6 +37,9 @@ setopt histignorealldups
 # autoload -U colors
 #colors
 
+export EDITOR=vim
+# But use emacs-style keys
+bindkey -e
 source /etc/profile
 source ~/.zsh/aliases
 source ~/.zsh/prompt
@@ -44,7 +47,6 @@ if [ $OSTYPE != 'cygwin' ]; then
     source ~/.zsh/keyboard
 fi
 
-export EDITOR=vim
 export PATH=$PATH:~/bin:~/scripts
 source distro_check.sh
 
