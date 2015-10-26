@@ -47,7 +47,7 @@ if [ $OSTYPE != 'cygwin' ]; then
     source ~/.zsh/keyboard
 fi
 
-export PATH=$PATH:~/bin:~/scripts
+export PATH=$PATH:~/bin
 source distro_check.sh
 
 # Set up virtualenv & do distro-specific stuff
