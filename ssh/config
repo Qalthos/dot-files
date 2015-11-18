@@ -6,7 +6,7 @@ Host *
 ########    Apartment hosts   #########
 #######################################
 
-Host 192.168.1.* *.131.countess
+Host 192.168.1.* *.131.countess 10.1.*.*
   StrictHostKeyChecking no
   UserKnownHostsFile=/dev/null
 
