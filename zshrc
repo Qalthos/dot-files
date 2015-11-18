@@ -52,6 +52,7 @@ source distro_check.sh
 
 # Set up virtualenv & do distro-specific stuff
 venv=virtualenvwrapper.sh
+WORKON_HOME=~/.local/virtualenvs-$DISTRO
 case $DISTRO in
     "Arch")
         eval "$(hub alias -s)"
