@@ -3,6 +3,7 @@ history
 *.sw?
 *~
 
-# SSH keys!
+# SSH stuff
 id_rsa*
 *.pem
+known_hosts
